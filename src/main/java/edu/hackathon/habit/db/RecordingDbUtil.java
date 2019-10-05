@@ -9,7 +9,7 @@ import java.util.List;
 public interface RecordingDbUtil extends MongoRepository<Recording, String> {
 
     public Recording findByRecordingId(String recordingId);
-
     public List<Recording> findByCityAndUserId(String city, String userId);
     public List<Recording> findByCityAndIsPrivate(String city, boolean isPrivate);
+    public Recording findRecordingByRecordingId(String recId);
 }

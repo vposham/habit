@@ -52,10 +52,10 @@ public class AppController {
     }
 
 
-    @GetMapping(value = "{userId}/{recId}/download")
+    @GetMapping(value = "download/{recId}")
     @ResponseBody
-    public byte[] downloadRecording(@PathVariable String userId, @PathVariable String recId) {
-        return new byte[0];
+    public byte[] downloadRecording(@PathVariable String recId) {
+        return  geoRecorderDataService.findRecordingByRecordingId(recId);
     }
 
     @PostMapping(value = "{userId}/save")

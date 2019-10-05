@@ -43,4 +43,10 @@ public class GeoRecorderDataService {
         }
         return out;
     }
+
+    public byte[] findRecordingByRecordingId(String recId) {
+        Recording recording = recordsRepo.findRecordingByRecordingId(recId);
+        return recording.getRecording();
+
+    }
 }
