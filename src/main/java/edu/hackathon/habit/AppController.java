@@ -3,6 +3,8 @@ package edu.hackathon.habit;
 import edu.hackathon.habit.model.LoginRequest;
 import edu.hackathon.habit.model.LoginResponse;
 import edu.hackathon.habit.model.RecordingRespMeta;
+import edu.hackathon.habit.services.GeoRecorderDataService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,6 +20,9 @@ import java.util.List;
 @RestController
 public class AppController {
 
+    @Autowired
+    GeoRecorderDataService geoRecorderDataService;
+
     @PostMapping(value = "/validate")
     @ResponseBody
     public LoginResponse validate(@RequestBody LoginRequest request) {
@@ -30,7 +35,7 @@ public class AppController {
     @GetMapping(value = "{userId}/geo")
     @ResponseBody
     public List<RecordingRespMeta> getRecordingsByLocation(@PathVariable String userId, @RequestParam("latitude") String latitude, @RequestParam("longitude") String longitude) {
-        return new ArrayList<>();
+        return geoRecorderDataService.getRecordingByCoordinate(userId, latitude, longitude);
     }
 
 
