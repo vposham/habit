@@ -1,4 +1,4 @@
-package edu.hackathon.habit.model.db;
+package edu.hackathon.habit.db;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 

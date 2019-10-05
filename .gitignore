@@ -1,0 +1,3 @@
+.idea/
+habit.iml
+src/main/java/edu/hackathon/habit/services/Speech2TranscriptService.java

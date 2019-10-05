@@ -2,7 +2,7 @@ package edu.hackathon.habit.util;
 import okhttp3.*;
 import java.util.concurrent.TimeUnit;
 
-public class finderUtils {
+public class FinderUtils {
 
     public String findCity(String lat, String lng, String radius) {
         String jsonResponse = "";
