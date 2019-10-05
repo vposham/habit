@@ -23,7 +23,7 @@ public class LoginService {
             }
             User user = userDbUtil.findByUsername(request.getUsername().trim());
 
-            if(user.password.equals(pwd.trim())){
+            if(user!=null && user.password.equals(pwd.trim())){
                 //good
                 return user.getUserId();
             }else{
