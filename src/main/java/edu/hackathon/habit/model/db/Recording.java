@@ -1,9 +1,12 @@
 package edu.hackathon.habit.model.db;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.Arrays;
 import java.util.List;
 
+@Document(collection = "recording")
 public class Recording {
 
     @Id
@@ -151,5 +154,24 @@ public class Recording {
 
     public void setImage(byte[] image) {
         this.image = image;
+    }
+
+    @Override
+    public String toString() {
+        return "Recording{" +
+                "recordingId='" + recordingId + '\'' +
+                ", userId='" + userId + '\'' +
+                ", recording=" + Arrays.toString(recording) +
+                ", transcript='" + transcript + '\'' +
+                ", tags=" + tags +
+                ", isPrivate=" + isPrivate +
+                ", latitude='" + latitude + '\'' +
+                ", longitude='" + longitude + '\'' +
+                ", city='" + city + '\'' +
+                ", timeStamp='" + timeStamp + '\'' +
+                ", isComplaint=" + isComplaint +
+                ", title='" + title + '\'' +
+                ", image=" + Arrays.toString(image) +
+                '}';
     }
 }
