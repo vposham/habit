@@ -1,6 +1,8 @@
 package edu.hackathon.habit.db;
 
+import org.hibernate.validator.constraints.UniqueElements;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "users")
@@ -9,6 +11,7 @@ public class User {
     @Id
     public String userId;
 
+    @Indexed(name = "username_unique", unique = true)
     public String username;
     public String password;
     public boolean isPrivate;

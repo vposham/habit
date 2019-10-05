@@ -10,6 +10,7 @@ public interface UserDbUtil extends MongoRepository<User, String> {
 
     public User findByUserId(String userId);
 
-    public List<User> findByUsername(String username);
+    public User findByUsername(String username);
+
 
 }
