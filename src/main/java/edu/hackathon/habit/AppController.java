@@ -4,6 +4,7 @@ import edu.hackathon.habit.model.LoginRequest;
 import edu.hackathon.habit.model.LoginResponse;
 import edu.hackathon.habit.model.RecordingRespMeta;
 import edu.hackathon.habit.services.GeoRecorderDataService;
+import edu.hackathon.habit.services.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,13 +25,24 @@ public class AppController {
     @Autowired
     GeoRecorderDataService geoRecorderDataService;
 
+    @Autowired
+    LoginService loginService;
+
     @PostMapping(value = "/validate")
     @ResponseBody
-    public LoginResponse validate(@RequestBody LoginRequest request) {
+    public LoginResponse validate(@RequestBody LoginRequest request, HttpServletResponse response) {
 
-        LoginResponse out = new LoginResponse();
-        out.setUserId("test");
-        return out;
+        String userId = loginService.getUserIdUponLogin(request);
+        if(userId == null){
+            LoginResponse out = null;
+            response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+            return null;
+        }else{
+            LoginResponse out = new LoginResponse();
+            out.setUserId(userId);
+            return out;
+        }
+
     }
 
     @GetMapping(value = "{userId}/geo")

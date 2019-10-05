@@ -25,12 +25,24 @@ public class AppStartUpLoad {
 
         try{
 
+            long count = userDbUtil.count();
+            if(count == 12){
+                return;
+            }
+
             User p1 = new User("dilip1","Tester123",false);
             User p2 = new User("sachin1","Tester123",false);
             User p3 = new User("praveen1","Tester123",false);
             User p4 = new User("mihai1","Tester123",false);
             User p5 = new User("posham1","Tester123",false);
             User p6 = new User("norman1","Tester123",false);
+
+            User pr1 = new User("dilip2","Tester123",true);
+            User pr2 = new User("sachin2","Tester123",true);
+            User pr3 = new User("praveen2","Tester123",true);
+            User pr4 = new User("mihai2","Tester123",true);
+            User pr5 = new User("posham2","Tester123",true);
+            User pr6 = new User("norman2","Tester123",true);
 
             List<User> userList = new ArrayList<>();
             userList.add(p1);
@@ -39,6 +51,12 @@ public class AppStartUpLoad {
             userList.add(p4);
             userList.add(p5);
             userList.add(p6);
+            userList.add(pr1);
+            userList.add(pr2);
+            userList.add(pr3);
+            userList.add(pr4);
+            userList.add(pr5);
+            userList.add(pr6);
 
 
 
@@ -48,21 +66,6 @@ public class AppStartUpLoad {
             e.printStackTrace();
         }
 
-
-
-//
-//
-//
-//        u1 = new User("dilip2","Tester123",true);
-//        u1 = new User("sachin2","Tester123",true);
-//        u1 = new User("praveen2","Tester123",true);
-//        u1 = new User("mihai2","Tester123",true);
-//        u1 = new User("posham2","Tester123",true);
-//        u1 = new User("norman2","Tester123",true);
-
-
-        User userresultList = userDbUtil.findByUsername("dilip1");
-        System.out.println(userresultList.username);
     }
 
 
