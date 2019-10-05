@@ -44,12 +44,9 @@ public class FinderUtils {
     }
 
     public String findCity(String lat, String lng) {
-        String list[]= findCities("26.310778","80.253227","16");
+        String list[]= findCities(lat,lng,"16");
         String cityName =  list==null?"":list[0];
         return cityName;
     }
-    public static void main(String args[]){
-        FinderUtils uti= new FinderUtils();
-        System.out.println("This is the data : "+uti.findCity("26.310778","80.253227"));
-    }
+
 }
