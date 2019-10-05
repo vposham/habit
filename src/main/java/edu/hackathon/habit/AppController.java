@@ -27,7 +27,6 @@ public class AppController {
         return out;
     }
 
-
     @GetMapping(value = "{userId}/geo")
     @ResponseBody
     public List<RecordingRespMeta> getRecordingsByLocation(@PathVariable String userId, @RequestParam("latitude") String latitude, @RequestParam("longitude") String longitude) {
