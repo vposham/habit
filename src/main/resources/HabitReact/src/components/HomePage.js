@@ -678,5 +678,5 @@ export class HomePage extends Component {
 }
 
 export default GoogleApiWrapper({
-  apiKey: 'AIzaSyCr4Pn99v4-h3R4UP0LuFGqS2IxBUafuiE'
+  apiKey: 'your api key'
 })(HomePage);

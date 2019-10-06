@@ -115,7 +115,7 @@ public class SaveRecordingService {
 
     private List<String> backupTagAnalyzer(String transcript) {
         List<String> tags = new ArrayList<>();
-        TextRazor client = new TextRazor("112ece0af03af45143988cea00191ccc715872e30212753f0d43492f");
+        TextRazor client = new TextRazor("your api key");
         client.addExtractor("topics");
 
         AnalyzedText response = null;
