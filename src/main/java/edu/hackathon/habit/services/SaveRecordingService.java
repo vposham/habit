@@ -1,6 +1,9 @@
 package edu.hackathon.habit.services;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.textrazor.TextRazor;
+import com.textrazor.annotations.AnalyzedText;
+import com.textrazor.annotations.Topic;
 import edu.hackathon.habit.db.Recording;
 import edu.hackathon.habit.db.RecordingDbUtil;
 import edu.hackathon.habit.db.UserDbUtil;
@@ -105,14 +108,27 @@ public class SaveRecordingService {
             apiResp.getKeywords().stream().filter(x -> x.getConfidenceScore() > 0.5).collect(Collectors.toList()).forEach(y -> out.add(y.getKeyword()));
             return out;
         } catch (Exception e) {
-            e.printStackTrace();
-            List<String> hardCodedResp = new ArrayList<>();
-            System.out.println("Parallels dots free limit is not working bro... sorry for hardcoding");
-            hardCodedResp.add("food");
-            hardCodedResp.add("burger");
-            return hardCodedResp;
+            return backupTagAnalyzer(transcript);
         }
 
+    }
+
+    private List<String> backupTagAnalyzer(String transcript) {
+        List<String> tags = new ArrayList<>();
+        TextRazor client = new TextRazor("112ece0af03af45143988cea00191ccc715872e30212753f0d43492f");
+        client.addExtractor("topics");
+
+        AnalyzedText response = null;
+        try {
+            response = client.analyze(transcript);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        for (Topic topic : response.getResponse().getTopics()) {
+            tags.add(topic.getLabel());
+        }
+        return tags;
     }
 
 }

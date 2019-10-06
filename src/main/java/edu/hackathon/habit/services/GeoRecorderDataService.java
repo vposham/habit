@@ -21,7 +21,7 @@ public class GeoRecorderDataService {
         String city = finderUtils.findCity(latitude,longitude);
         List<Recording> usersRecordings = recordsRepo.findByCityAndUserId(city, userId);
         List<Recording> publicRecordings = recordsRepo.findByCityAndIsPrivate(city, false);
-        List<RecordingRespMeta> out = new ArrayList<RecordingRespMeta>(usersRecordings.size());
+        List<RecordingRespMeta> out = new ArrayList<>(usersRecordings.size());
         addData(usersRecordings,out);
         addData(publicRecordings,out);
         return out;
