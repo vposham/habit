@@ -17,13 +17,13 @@ public class GeoRecorderDataService {
     RecordingDbUtil recordsRepo;
 
     public List<RecordingRespMeta> getRecordingByCoordinate(String userId, String latitude, String longitude) {
-        FinderUtils finderUtils= new FinderUtils();
-        String city = finderUtils.findCity(latitude,longitude);
+        FinderUtils finderUtils = new FinderUtils();
+        String city = finderUtils.findCity(latitude, longitude);
         List<Recording> usersRecordings = recordsRepo.findByCityAndUserId(city, userId);
         List<Recording> publicRecordings = recordsRepo.findByCityAndIsPrivate(city, false);
         List<RecordingRespMeta> out = new ArrayList<>(usersRecordings.size());
-        addData(usersRecordings,out);
-        addData(publicRecordings,out);
+        addData(usersRecordings, out);
+        addData(publicRecordings, out);
         return out;
     }
 
@@ -32,7 +32,7 @@ public class GeoRecorderDataService {
         return recording.getRecording();
     }
 
-    private void addData(List<Recording> recoding, List<RecordingRespMeta> out){
+    private void addData(List<Recording> recoding, List<RecordingRespMeta> out) {
         for (Recording userRecord : recoding) {
             RecordingRespMeta meta = new RecordingRespMeta();
             meta.setIsPrivate(userRecord.isPrivate);
@@ -40,6 +40,7 @@ public class GeoRecorderDataService {
             meta.setLongitude(userRecord.longitude);
             meta.setTags(userRecord.getTags());
             meta.setRecId(userRecord.recordingId);
+            meta.setTranscript(userRecord.transcript);
             out.add(meta);
         }
     }

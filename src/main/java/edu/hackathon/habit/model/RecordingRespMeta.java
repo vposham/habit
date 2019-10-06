@@ -12,12 +12,15 @@ import java.util.List;
         "isPrivate",
         "latitude",
         "longitude",
-        "tags"
+        "tags",
+        "transcript"
 })
 public class RecordingRespMeta {
 
     @JsonProperty("recId")
     private String recId;
+    @JsonProperty("transcript")
+    private String transcript;
     @JsonProperty("isPrivate")
     private Boolean isPrivate;
     @JsonProperty("latitude")
@@ -77,4 +80,13 @@ public class RecordingRespMeta {
         this.tags = tags;
     }
 
+    @JsonProperty("transcript")
+    public String getTranscript() {
+        return transcript;
+    }
+
+    @JsonProperty("transcript")
+    public void setTranscript(String transcript) {
+        this.transcript = transcript;
+    }
 }
