@@ -10,8 +10,8 @@ public class FeController {
 
 
     @GetMapping("/app")
-    public String greeting(@RequestParam(name="name", required=false, defaultValue="index2") String name, Model model) {
+    public String greeting(@RequestParam(name="name", required=false, defaultValue="index3") String name, Model model) {
         model.addAttribute("name", name);
-        return "index2.html";
+        return "index3.html";
     }
 }
