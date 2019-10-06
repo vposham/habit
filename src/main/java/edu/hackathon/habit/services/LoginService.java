@@ -21,7 +21,7 @@ public class LoginService {
             if(userName==null || pwd ==null ||  userName.trim().isEmpty() || pwd.trim().isEmpty()){
                 return null;
             }
-            User user = userDbUtil.findByUsername(request.getUsername().trim());
+            User user = userDbUtil.findByUsername(request.getUsername().trim().toLowerCase());
 
             if(user!=null && user.password.equals(pwd.trim())){
                 //good
