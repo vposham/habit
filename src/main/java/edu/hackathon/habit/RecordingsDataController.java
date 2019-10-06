@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/admin/recording")
@@ -32,17 +31,7 @@ public class RecordingsDataController {
     public List<Recording> listRecordingsIds() {
         List<Recording> allRecords = recordingsRepository.findAll();
         allRecords.forEach(x -> x.setRecording(null));
-        allRecords.forEach(x -> x.setImage(null));
         return allRecords;
-    }
-
-    @GetMapping("/{recordingId}")
-    public Recording getRecordingofId(@PathVariable String recordingId) {
-        Optional<Recording> record = recordingsRepository.findById(recordingId);
-        if (record.get() != null){
-            return record.get();
-        }
-        return null;
     }
 
     @PutMapping("/{recordingId}")
