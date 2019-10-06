@@ -17,6 +17,7 @@ import java.security.KeyStore;
 import java.security.Security;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -41,7 +42,7 @@ public class AppStartUpLoad {
         try{
 
             long count = userDbUtil.count();
-            if(count == 12){
+            if(count == 14){
                 insertRecords();
                 return;
             }
@@ -52,13 +53,15 @@ public class AppStartUpLoad {
             User p4 = new User("mihai1","Tester123",false);
             User p5 = new User("posham1","Tester123",false);
             User p6 = new User("norman1","Tester123",false);
+            User p7 = new User("mychal1","Tester123",false);
+            User p8 = new User("public","Tester123",false);
 
             User pr1 = new User("dilip2","Tester123",true);
             User pr2 = new User("sachin2","Tester123",true);
             User pr3 = new User("praveen2","Tester123",true);
             User pr4 = new User("mihai2","Tester123",true);
             User pr5 = new User("posham2","Tester123",true);
-            User pr6 = new User("norman2","Tester123",true);
+            User pr6 = new User("private","Tester123",true);
 
             List<User> userList = new ArrayList<>();
             userList.add(p1);
@@ -73,6 +76,8 @@ public class AppStartUpLoad {
             userList.add(pr4);
             userList.add(pr5);
             userList.add(pr6);
+            userList.add(p7);
+            userList.add(p8);
 
 
 
@@ -93,9 +98,11 @@ public class AppStartUpLoad {
 
         InputStream inEnc = null;
         InputStream inEnc1 = null;
+        InputStream inEnc2 = null;
+        InputStream inEnc3 = null;
         try{
 
-            if(recordingDbUtil.count()>=12){
+            if(recordingDbUtil.count()>=14){
                 return;
             }
             User u = userDbUtil.findByUsername("dilip1");
@@ -118,6 +125,8 @@ public class AppStartUpLoad {
 
             inEnc = getClass().getResourceAsStream("/recordings/recording1.wav");
             inEnc1 = getClass().getResourceAsStream("/recordings/hurricane.jpg");
+            inEnc2 = getClass().getResourceAsStream("/recordings/Office_Depot.m4a");
+            inEnc3 = getClass().getResourceAsStream("/recordings/Singing_Pines.mp3");
 
             ByteArrayOutputStream buffer = new ByteArrayOutputStream();
             int nRead;
@@ -128,6 +137,8 @@ public class AppStartUpLoad {
 
             buffer.flush();
             byte[] picbyteArray = buffer.toByteArray();
+
+
 
             ByteArrayOutputStream buffer1 = new ByteArrayOutputStream();
             int nRead1;
@@ -167,6 +178,50 @@ public class AppStartUpLoad {
             Recording record12 =new Recording( userId,  null, transcript, tags,  true,  "26.534233",  "-80.094681",  finderUtils.findCity("26.534233",  "-80.094681"), ts.toString(), true, "Sample", picbyteArray);
 
 
+
+            ByteArrayOutputStream buffer2 = new ByteArrayOutputStream();
+            int nRead2;
+            byte[] data2 = new byte[1024];
+            while ((nRead2 = inEnc2.read(data2, 0, data2.length)) != -1) {
+                buffer2.write(data2, 0, nRead2);
+            }
+
+            buffer2.flush();
+            byte[] michealaudio = buffer2.toByteArray();
+
+            List<String> michealtags = new ArrayList<>();
+            michealtags.add("Office Depot");
+
+
+
+            ByteArrayOutputStream buffer3 = new ByteArrayOutputStream();
+            int nRead3;
+            byte[] data3 = new byte[1024];
+            while ((nRead3 = inEnc3.read(data3, 0, data3.length)) != -1) {
+                buffer3.write(data3, 0, nRead3);
+            }
+
+            buffer3.flush();
+            byte[] publicaudio = buffer3.toByteArray();
+
+            List<String> publictags = new ArrayList<>();
+            publictags.add("Children");
+            publictags.add("Museum");
+
+            User u1 = userDbUtil.findByUsername("mychal1");
+
+            String userId1 = u1.getUserId();
+
+            User u2 = userDbUtil.findByUsername("public");
+
+            String userId2 = u2.getUserId();
+
+            Recording record13 =new Recording( userId1,  michealaudio, "Office Depot is founded by", michealtags,  false,  "26.475667",  "-80.089835",  finderUtils.findCity("26.475667",  "-80.089835"), ts.toString(), true, "", null);
+            Recording record14 =new Recording( userId2,  publicaudio, "Boca Raton Childrens Musem", publictags,  false,  "26.354449",  "-80.091098",  finderUtils.findCity("26.354449",  "-80.091098"), ts.toString(), true, "", null);
+
+
+
+
             List<Recording> recordingList = new ArrayList<>();
             recordingList.add(record1);
             recordingList.add(record2);
@@ -180,6 +235,8 @@ public class AppStartUpLoad {
             recordingList.add(record10);
             recordingList.add(record11);
             recordingList.add(record12);
+            recordingList.add(record13);
+            recordingList.add(record14);
 
             recordingDbUtil.saveAll(recordingList);
 
@@ -197,6 +254,20 @@ public class AppStartUpLoad {
             try {
                 if (inEnc1 != null) {
                     inEnc1.close();
+                }
+            } catch (IOException var2) {
+            }
+
+            try {
+                if (inEnc2 != null) {
+                    inEnc2.close();
+                }
+            } catch (IOException var2) {
+            }
+
+            try {
+                if (inEnc3 != null) {
+                    inEnc3.close();
                 }
             } catch (IOException var2) {
             }
