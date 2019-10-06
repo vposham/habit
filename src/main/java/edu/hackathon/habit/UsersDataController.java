@@ -23,7 +23,7 @@ public class UsersDataController {
 
     @PostMapping
     public User createUser(@RequestBody User user) {
-        usersRepository.save(user);
+        user = usersRepository.save(user);
         return user;
     }
 
@@ -35,7 +35,7 @@ public class UsersDataController {
     @PutMapping("/{userId}")
     public User updateUser(@RequestBody User user, @PathVariable String userId) {
         user.setUserId(userId);
-        usersRepository.save(user);
+        user = usersRepository.save(user);
         return user;
     }
 

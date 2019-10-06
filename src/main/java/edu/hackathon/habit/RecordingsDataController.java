@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -23,19 +24,21 @@ public class RecordingsDataController {
 
     @PostMapping
     public Recording createRecording(@RequestBody Recording recording) {
-        recordingsRepository.save(recording);
+        recording = recordingsRepository.save(recording);
         return recording;
     }
 
     @GetMapping
-    public List listRecordings() {
-        return recordingsRepository.findAll();
+    public List<Recording> listRecordingsIds() {
+        List<Recording> allRecords = recordingsRepository.findAll();
+        allRecords.forEach(x -> x.setRecording(null));
+        return allRecords;
     }
 
     @PutMapping("/{recordingId}")
     public Recording updateRecording(@RequestBody Recording recording, @PathVariable String recordingId) {
         recording.setRecordingId(recordingId);
-        recordingsRepository.save(recording);
+        recording = recordingsRepository.save(recording);
         return recording;
     }
 

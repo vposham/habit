@@ -36,6 +36,9 @@ public class Recording {
 
     public byte[] image;
 
+    public Recording() {
+    }
+
     public Recording(String userId, byte[] recording, String transcript, List<String> tags, boolean isPrivate, String latitude, String longitude, String city, String timeStamp, boolean isComplaint, String title, byte[] image) {
         this.userId = userId;
         this.recording = recording;

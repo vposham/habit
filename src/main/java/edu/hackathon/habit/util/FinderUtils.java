@@ -3,8 +3,11 @@ import okhttp3.*;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.XML;
+import org.springframework.stereotype.Service;
+
 import java.util.concurrent.TimeUnit;
 
+@Service
 public class FinderUtils {
 
     public String[] findCities(String lat, String lng, String radius) {
