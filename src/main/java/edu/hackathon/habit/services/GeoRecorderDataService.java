@@ -2,11 +2,20 @@ package edu.hackathon.habit.services;
 
 import edu.hackathon.habit.db.Recording;
 import edu.hackathon.habit.db.RecordingDbUtil;
+import edu.hackathon.habit.model.DownloadResponse;
 import edu.hackathon.habit.model.RecordingRespMeta;
 import edu.hackathon.habit.util.FinderUtils;
+import org.apache.tika.detect.DefaultDetector;
+import org.apache.tika.detect.Detector;
+import org.apache.tika.io.IOUtils;
+import org.apache.tika.metadata.Metadata;
+import org.apache.tika.mime.MediaType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.*;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,9 +36,14 @@ public class GeoRecorderDataService {
         return out;
     }
 
-    public byte[] findRecordingByRecordingId(String recId) {
+    public DownloadResponse findRecordingByRecordingId(String recId) throws IOException {
         Recording recording = recordsRepo.findRecordingByRecordingId(recId);
-        return recording.getRecording();
+        String  mediaType = detectDocTypeUsingDetector(new ByteArrayInputStream(recording.getRecording()));
+        DownloadResponse downloadResponse = new DownloadResponse();
+        downloadResponse.setRecording(recording.getRecording());
+        downloadResponse.setTranscript(recording.getTranscript());
+        downloadResponse.setMediaType(mediaType);
+        return downloadResponse;
     }
 
     private void addData(List<Recording> recoding, List<RecordingRespMeta> out){
@@ -43,4 +57,16 @@ public class GeoRecorderDataService {
             out.add(meta);
         }
     }
+
+    public static String detectDocTypeUsingDetector(InputStream stream)
+            throws IOException {
+        Detector detector = new DefaultDetector();
+        Metadata metadata = new Metadata();
+
+       MediaType mediaType = detector.detect(stream, metadata);
+        //InputStream is = new ByteArrayInputStream(IOUtils.toByteArray(stream));
+      //  String mimeType = URLConnection.guessContentTypeFromStream(is);
+        return mediaType.toString();
+    }
+
 }
