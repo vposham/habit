@@ -30,6 +30,9 @@ public class AppStartUpLoad {
     @Autowired
     RecordingDbUtil recordingDbUtil;
 
+    @Autowired
+    FinderUtils finderUtils;
+
 
     @PostConstruct
     public void init(){
@@ -136,32 +139,32 @@ public class AppStartUpLoad {
             buffer1.flush();
             byte[] vidbyteArray = buffer1.toByteArray();
 
-            Recording record1 =new Recording( userId,  vidbyteArray, transcript, tags,  false,  "26.401097",  "-80.120519",  "BOCA RATON", ts.toString(), false, "", null);
+            Recording record1 =new Recording( userId,  vidbyteArray, transcript, tags,  false,  "26.401097",  "-80.120519",  finderUtils.findCity("26.401097",  "-80.120519"), ts.toString(), false, "", null);
 
-            Recording record2 =new Recording( userId,  vidbyteArray, transcript, tags,  false,  "26.439387",  "-80.078504",  "DELRAY BEACH", ts.toString(), false, "", null);
+            Recording record2 =new Recording( userId,  vidbyteArray, transcript, tags,  false,  "26.439387",  "-80.078504",  finderUtils.findCity("26.439387",  "-80.078504"), ts.toString(), false, "", null);
 
-            Recording record3 =new Recording( userId,  vidbyteArray, transcript, tags,  false,  "26.526001",  "-80.165200",  "BOYNTON BEACH", ts.toString(), false, "", null);
-
-
-            Recording record4 =new Recording( userId,  vidbyteArray, transcript, tags,  true,  "26.366395",  "-80.079194",  "BOCA RATON", ts.toString(), false, "", null);
+            Recording record3 =new Recording( userId,  vidbyteArray, transcript, tags,  false,  "26.526001",  "-80.165200",  finderUtils.findCity("26.526001",  "-80.165200"), ts.toString(), false, "", null);
 
 
-            Recording record5 =new Recording( userId,  vidbyteArray, transcript, tags,  true,  "26.436260",  "-80.123708",  "DELRAY BEACH", ts.toString(), false, "", null);
+            Recording record4 =new Recording( userId,  vidbyteArray, transcript, tags,  true,  "26.366395",  "-80.079194",  finderUtils.findCity("26.366395",  "-80.079194"), ts.toString(), false, "", null);
 
 
-            Recording record6 =new Recording( userId,  vidbyteArray, transcript, tags,  true,  "26.512569",  "-80.121573",  "BOYNTON BEACH", ts.toString(), false, "", null);
+            Recording record5 =new Recording( userId,  vidbyteArray, transcript, tags,  true,  "26.436260",  "-80.123708",  finderUtils.findCity("26.436260",  "-80.123708"), ts.toString(), false, "", null);
 
 
-            Recording record7 =new Recording( userId,  null, transcript, tags,  false,  "26.376860",  "-80.113072",  "BOCA RATON", ts.toString(), true, "Sample", picbyteArray);
+            Recording record6 =new Recording( userId,  vidbyteArray, transcript, tags,  true,  "26.512569",  "-80.121573",  finderUtils.findCity("26.512569",  "-80.121573"), ts.toString(), false, "", null);
 
-            Recording record8 =new Recording( userId,  null, transcript, tags,  false,  "26.471174",  "-80.146077",  "DELRAY BEACH", ts.toString(), true, "Sample", picbyteArray);
 
-            Recording record9 =new Recording( userId,  null, transcript, tags,  false,  "26.488707",  "-80.121496",  "BOYNTON BEACH", ts.toString(), true, "Sample", picbyteArray);
+            Recording record7 =new Recording( userId,  null, transcript, tags,  false,  "26.376860",  "-80.113072",  finderUtils.findCity("26.376860",  "-80.113072"), ts.toString(), true, "Sample", picbyteArray);
 
-            Recording record10 =new Recording( userId,  null, transcript, tags,  true,  "26.392608",  "-80.099441",  "BOCA RATON", ts.toString(), true, "Sample", picbyteArray);
+            Recording record8 =new Recording( userId,  null, transcript, tags,  false,  "26.471174",  "-80.146077",  finderUtils.findCity("26.471174",  "-80.146077"), ts.toString(), true, "Sample", picbyteArray);
 
-            Recording record11 =new Recording( userId,  null, transcript, tags,  true,  "26.461664",  "-80.072003",  "DELRAY BEACH", ts.toString(), true, "Sample", picbyteArray);
-            Recording record12 =new Recording( userId,  null, transcript, tags,  true,  "26.534233",  "-80.094681",  "BOYNTON BEACH", ts.toString(), true, "Sample", picbyteArray);
+            Recording record9 =new Recording( userId,  null, transcript, tags,  false,  "26.488707",  "-80.121496",  finderUtils.findCity("26.488707",  "-80.121496"), ts.toString(), true, "Sample", picbyteArray);
+
+            Recording record10 =new Recording( userId,  null, transcript, tags,  true,  "26.392608",  "-80.099441",  finderUtils.findCity("26.392608",  "-80.099441"), ts.toString(), true, "Sample", picbyteArray);
+
+            Recording record11 =new Recording( userId,  null, transcript, tags,  true,  "26.461664",  "-80.072003",  finderUtils.findCity("26.461664",  "-80.072003"), ts.toString(), true, "Sample", picbyteArray);
+            Recording record12 =new Recording( userId,  null, transcript, tags,  true,  "26.534233",  "-80.094681",  finderUtils.findCity("26.534233",  "-80.094681"), ts.toString(), true, "Sample", picbyteArray);
 
 
             List<Recording> recordingList = new ArrayList<>();
