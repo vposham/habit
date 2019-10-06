@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="34px" height="39px" viewBox="0 0 34 39" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="13" cy="18" r="9"></circle>
+        <filter x="-77.8%" y="-55.6%" width="255.6%" height="255.6%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Prototype" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Maps" transform="translate(-8.000000, -335.000000)">
+            <g id="Group" transform="translate(12.000000, 335.000000)">
+                <g id="pin-copy-8">
+                    <g id="Group-2">
+                        <g id="pin-bg">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                            <use fill="#173152" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        </g>
+                        <path d="M5.35285326,8.81452153 C4.97611557,9.1252403 4.444875,9.03648872 4.16629422,8.61628932 C3.88771345,8.19608992 3.96728535,7.60356367 4.34402304,7.2928449 C6.99928139,5.10288981 9.89243836,4 13,4 C16.1075616,4 19.0007186,5.10288981 21.655977,7.2928449 C22.0327147,7.60356367 22.1122866,8.19608992 21.8337058,8.61628932 C21.555125,9.03648872 21.0238844,9.1252403 20.6471467,8.81452153 C18.2788489,6.86124045 15.7376313,5.89251217 13,5.89251217 C10.2623687,5.89251217 7.72115109,6.86124045 5.35285326,8.81452153 Z M1.59848391,5.80574117 C1.15600958,6.12855615 0.529387835,6.03989667 0.198885071,5.60771468 C-0.131617693,5.17553269 -0.0408468022,4.56348671 0.40162753,4.24067173 C4.26888127,1.41924833 8.47770847,0 13,0 C17.5222915,0 21.7311187,1.41924833 25.5983725,4.24067173 C26.0408468,4.56348671 26.1316177,5.17553269 25.8011149,5.60771468 C25.4706122,6.03989667 24.8439904,6.12855615 24.4015161,5.80574117 C20.8735742,3.23186876 17.0824386,1.95346918 13,1.95346918 C8.91756142,1.95346918 5.12642576,3.23186876 1.59848391,5.80574117 Z" id="Combined-Shape" fill="#173152" fill-rule="nonzero"></path>
+                        <path d="M11.8701137,14.6344673 L16.0751901,17.2378692 C16.4964747,17.4986905 16.6263523,18.0513178 16.3652798,18.472197 C16.2922794,18.5898821 16.1929885,18.6890774 16.0751901,18.7620075 L11.8701137,21.3654094 C11.4488291,21.6262307 10.8956693,21.4964781 10.6345968,21.0755989 C10.5466141,20.9337606 10.5,20.7702061 10.5,20.6033403 L10.5,15.3965364 C10.5,14.901393 10.9017797,14.5 11.3974001,14.5 C11.5644267,14.5 11.7281387,14.5465692 11.8701137,14.6344673 Z" id="Rectangle-2" fill="#FFFFFF" fill-rule="nonzero"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="15px" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Header" transform="translate(-340.000000, -34.000000)" fill="#444444" fill-rule="nonzero">
+            <g id="ui-16px-3_funnel-40">
+                <g transform="translate(340.000000, 34.000000)">
+                    <path d="M14.9015818,0.5184375 C14.7422068,0.200625 14.4178318,0 14.0625193,0 L0.937519335,0 C0.582206835,0 0.257831835,0.200625 0.0984568348,0.5184375 C-0.0590431652,0.83625 -0.0252931652,1.2159375 0.187519335,1.5 L5.62501933,8.7496875 L5.62501933,14.0625 C5.62501933,14.5809375 6.04408183,15 6.56251933,15 L8.43751933,15 C8.95595683,15 9.37501933,14.5809375 9.37501933,14.0625 L9.37501933,8.7496875 L14.8125193,1.5 C15.0253318,1.2159375 15.0590818,0.83625 14.9015818,0.5184375 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

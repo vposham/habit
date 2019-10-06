@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="22px" viewBox="0 0 21 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>profile-selected</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Tab-navigation" transform="translate(-302.000000, -13.000000)" fill="#3C5C86">
+            <g id="Tabbar">
+                <g id="profile" transform="translate(250.000000, 0.000000)">
+                    <g id="profile-selected" transform="translate(52.000000, 13.000000)">
+                        <g id="Combined-Shape">
+                            <path d="M10.5,11.8695652 C7.34140909,11.8695652 4.77272727,9.41256522 4.77272727,6.39130435 L4.77272727,5.47826087 C4.77272727,2.457 7.34140909,0 10.5,0 C13.6585909,0 16.2272727,2.457 16.2272727,5.47826087 L16.2272727,6.39130435 C16.2272727,9.41256522 13.6585909,11.8695652 10.5,11.8695652 Z M17.4891818,14.6783043 C19.5557727,15.2261304 21,17.0366957 21,19.0828261 L21,22 L0,22 L0,19.0828261 C0,17.0366957 1.44422727,15.2261304 3.51081818,14.6783043 C8.00195455,13.4886087 12.999,13.4886087 17.4891818,14.6783043 Z" fill-rule="nonzero"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

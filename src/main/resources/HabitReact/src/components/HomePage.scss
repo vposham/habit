@@ -1,0 +1,164 @@
+/* stylelint-disable */
+
+#getCurrentPosition {
+	border-radius: 30px;
+    /* background-color: #2dc17d; */
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    left: 295px;
+    z-index: 9999;
+    top: 588px;
+    outline: 0;
+    border: 0;
+    object {
+		width: 29px!important;
+	}
+}
+
+.Stop {
+	background-image: url("./Stop.svg");
+	background-color: #D0021B;
+	background-repeat: no-repeat;
+    background-position: center;
+}
+
+.Add {
+	background-image: url("./Add.svg");
+	background-color: #3c5c86;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.Play {
+	background-image: url("./Play.svg");
+	background-color: #3c5c86;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px;
+}
+
+.bottom-navigation {
+	position: relative;
+	top: 667px;
+}
+
+.ProfileDisabled {
+	background-image: url("./Profile-disabled.svg");
+	background-color: #3c5c86;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px;
+
+    &:hover {
+		background-image: url("./Profile.svg");
+    }
+}
+
+.DiscoverDisabled {
+	background-image: url("./Discovery-disabled.svg");
+	background-color: #3c5c86;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px;
+
+    &:hover {
+		background-image: url("./Discovery.svg");
+    }
+}
+
+.MapsDisabled {
+	background-image: url("./Maps-disabled.svg");
+	background-color: #3c5c86;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px;
+
+    &:hover {
+		background-image: url("./Maps.svg");
+    }
+}
+
+.btn {
+	width: 125px;
+	height: 50px;
+	background-color: white;
+    border: 0;
+}
+
+#mapContainer {
+	position: relative;
+	margin-bottom: 400px;
+}
+
+#detailedMarkerInfo {
+    position: absolute;
+    width: 100%;
+    top: 569px;
+    height: 100px;
+    z-index: 999;
+    color: white;
+    font-weight: bold;
+    background: white;
+    opacity: 0.9;
+}
+
+#newMarkerInfo {
+    background: white;
+    position: absolute;
+    width: 100%;
+    top: 569px;
+    height: 100px;
+    z-index: 999;
+    color: white;
+    font-weight: bold;
+    opacity: 0.7;
+
+    #time {
+		color: black;
+	    font-weight: bold;
+	    font-size: 32px;
+	    right: 98px;
+	    top: 6px;
+	    position: absolute;
+    }
+}
+
+.closeDetailedView {
+	position: absolute;
+    right: 0;
+    width: 75px;
+    height: 75px;
+    border: 1px solid blue;
+    background: transparent;
+}
+
+.detailedViewName {
+	color: #ffa620;
+    font-size: 26px;
+    position: relative;
+    left: 20px;
+    top: -14px;
+    font-weight: 400;
+
+    &-transcript {
+		font-size: 13px;
+	    color: black;
+	    top: -31px;
+	    max-height: 56px;
+	    max-width: 270px;
+	    overflow: hidden;
+    }
+}
+
+.searchContainer {
+	input {
+		font-size: 20px;
+    	border-radius: 17px;
+    	border: 1px solid #e6e6e6;
+	}
+
+	button {
+
+	}
+}

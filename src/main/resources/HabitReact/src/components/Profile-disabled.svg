@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="22px" viewBox="0 0 21 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>profile-normal</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="profile-normal" transform="translate(1.000000, 1.000000)" stroke="#9B99A9" stroke-width="1.90080009">
+            <g id="Shape">
+                <path d="M9.5,10.4761905 L9.5,10.4761905 C6.87705,10.4761905 4.75,8.34380952 4.75,5.71428571 L4.75,4.76190476 C4.75,2.13238095 6.87705,0 9.5,0 L9.5,0 C12.12295,0 14.25,2.13238095 14.25,4.76190476 L14.25,5.71428571 C14.25,8.34380952 12.12295,10.4761905 9.5,10.4761905 Z"></path>
+                <path d="M19,18.007619 C19,16.2933333 17.86285,14.7857143 16.2127,14.3352381 C14.4134,13.8428571 11.9567,13.3333333 9.5,13.3333333 C7.0433,13.3333333 4.5866,13.8428571 2.7873,14.3352381 C1.13715,14.7857143 0,16.2933333 0,18.007619 L0,20 L19,20 L19,18.007619 Z"></path>
+            </g>
+        </g>
+    </g>
+</svg>
