@@ -64,14 +64,11 @@ public class AppController {
 
     @PostMapping(value = "{userId}/save")
     @ResponseBody
-    public RecordingRespMeta saveRecording(@PathVariable String userId, @RequestParam("file") MultipartFile file, @RequestParam("image") MultipartFile image, @RequestParam("latitude") String latitude, @RequestParam("longitude") String longitude) {
-        RecordingRespMeta out = new RecordingRespMeta();
-        out.setIsPrivate(false);
-        out.setLatitude("");
-        out.setLongitude("");
-        out.setRecId("");
-        out.setTags(new ArrayList<>());
-        return out;
+    public RecordingRespMeta saveRecording(@PathVariable String userId, @RequestParam("file") MultipartFile file,
+                                           @RequestParam("image") MultipartFile image, @RequestParam("latitude") String latitude,
+                                           @RequestParam("longitude") String longitude, @RequestParam("transcript") String transcript,
+                                           @RequestParam("title") String title, @RequestParam("isComplaint") boolean isComplaint) throws IOException {
+        return saveRecordingService.populateInfo(userId, file, image, latitude, longitude, transcript, isComplaint, title);
     }
 
 
