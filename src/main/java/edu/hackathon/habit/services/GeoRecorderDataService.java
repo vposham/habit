@@ -22,8 +22,18 @@ public class GeoRecorderDataService {
         List<Recording> usersRecordings = recordsRepo.findByCityAndUserId(city, userId);
         List<Recording> publicRecordings = recordsRepo.findByCityAndIsPrivate(city, false);
         List<RecordingRespMeta> out = new ArrayList<RecordingRespMeta>(usersRecordings.size());
+        addData(usersRecordings,out);
+        addData(publicRecordings,out);
+        return out;
+    }
 
-        for (Recording userRecord : usersRecordings) {
+    public byte[] findRecordingByRecordingId(String recId) {
+        Recording recording = recordsRepo.findRecordingByRecordingId(recId);
+        return recording.getRecording();
+    }
+
+    private void addData(List<Recording> recoding, List<RecordingRespMeta> out){
+        for (Recording userRecord : recoding) {
             RecordingRespMeta meta = new RecordingRespMeta();
             meta.setIsPrivate(userRecord.isPrivate);
             meta.setLatitude(userRecord.latitude);
@@ -32,21 +42,5 @@ public class GeoRecorderDataService {
             meta.setRecId(userRecord.recordingId);
             out.add(meta);
         }
-        for (Recording record : publicRecordings) {
-            RecordingRespMeta meta = new RecordingRespMeta();
-            meta.setIsPrivate(record.isPrivate);
-            meta.setLatitude(record.latitude);
-            meta.setLongitude(record.longitude);
-            meta.setTags(record.getTags());
-            meta.setRecId(record.recordingId);
-            out.add(meta);
-        }
-        return out;
-    }
-
-    public byte[] findRecordingByRecordingId(String recId) {
-        Recording recording = recordsRepo.findRecordingByRecordingId(recId);
-        return recording.getRecording();
-
     }
 }
