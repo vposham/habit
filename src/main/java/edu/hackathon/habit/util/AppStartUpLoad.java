@@ -91,6 +91,10 @@ public class AppStartUpLoad {
         InputStream inEnc = null;
         InputStream inEnc1 = null;
         try{
+
+            if(recordingDbUtil.count()>=12){
+                return;
+            }
             User u = userDbUtil.findByUsername("dilip1");
 
             String userId = u.getUserId();
@@ -134,31 +138,31 @@ public class AppStartUpLoad {
 
             Recording record1 =new Recording( userId,  vidbyteArray, transcript, tags,  false,  "26.401097",  "-80.120519",  "BOCA RATON", ts.toString(), false, "", null);
 
+            Recording record2 =new Recording( userId,  vidbyteArray, transcript, tags,  false,  "26.439387",  "-80.078504",  "DELRAY BEACH", ts.toString(), false, "", null);
 
-            Recording record2 =new Recording( userId,  vidbyteArray, transcript, tags,  false,  "26.401097",  "-80.120519",  "DELRAY BEACH", ts.toString(), false, "", null);
-
-            Recording record3 =new Recording( userId,  vidbyteArray, transcript, tags,  false,  "26.401097",  "-80.120519",  "BOYNTON BEACH", ts.toString(), false, "", null);
-
-
-            Recording record4 =new Recording( userId,  vidbyteArray, transcript, tags,  true,  "26.401097",  "-80.120519",  "BOCA RATON", ts.toString(), false, "", null);
+            Recording record3 =new Recording( userId,  vidbyteArray, transcript, tags,  false,  "26.526001",  "-80.165200",  "BOYNTON BEACH", ts.toString(), false, "", null);
 
 
-            Recording record5 =new Recording( userId,  vidbyteArray, transcript, tags,  true,  "26.401097",  "-80.120519",  "DELRAY BEACH", ts.toString(), false, "", null);
+            Recording record4 =new Recording( userId,  vidbyteArray, transcript, tags,  true,  "26.366395",  "-80.079194",  "BOCA RATON", ts.toString(), false, "", null);
 
 
-            Recording record6 =new Recording( userId,  vidbyteArray, transcript, tags,  true,  "26.401097",  "-80.120519",  "BOYNTON BEACH", ts.toString(), false, "", null);
+            Recording record5 =new Recording( userId,  vidbyteArray, transcript, tags,  true,  "26.436260",  "-80.123708",  "DELRAY BEACH", ts.toString(), false, "", null);
 
 
-            Recording record7 =new Recording( userId,  null, transcript, tags,  false,  "26.401097",  "-80.120519",  "BOCA RATON", ts.toString(), true, "Sample", picbyteArray);
+            Recording record6 =new Recording( userId,  vidbyteArray, transcript, tags,  true,  "26.512569",  "-80.121573",  "BOYNTON BEACH", ts.toString(), false, "", null);
 
-            Recording record8 =new Recording( userId,  null, transcript, tags,  false,  "26.401097",  "-80.120519",  "DELRAY BEACH", ts.toString(), true, "Sample", picbyteArray);
 
-            Recording record9 =new Recording( userId,  null, transcript, tags,  false,  "26.401097",  "-80.120519",  "BOYNTON BEACH", ts.toString(), true, "Sample", picbyteArray);
+            Recording record7 =new Recording( userId,  null, transcript, tags,  false,  "26.376860",  "-80.113072",  "BOCA RATON", ts.toString(), true, "Sample", picbyteArray);
 
-            Recording record10 =new Recording( userId,  null, transcript, tags,  true,  "26.401097",  "-80.120519",  "BOCA RATON", ts.toString(), true, "Sample", picbyteArray);
+            Recording record8 =new Recording( userId,  null, transcript, tags,  false,  "26.471174",  "-80.146077",  "DELRAY BEACH", ts.toString(), true, "Sample", picbyteArray);
 
-            Recording record11 =new Recording( userId,  null, transcript, tags,  true,  "26.401097",  "-80.120519",  "DELRAY BEACH", ts.toString(), true, "Sample", picbyteArray);
-            Recording record12 =new Recording( userId,  null, transcript, tags,  true,  "26.401097",  "-80.120519",  "BOYNTON BEACH", ts.toString(), true, "Sample", picbyteArray);
+            Recording record9 =new Recording( userId,  null, transcript, tags,  false,  "26.488707",  "-80.121496",  "BOYNTON BEACH", ts.toString(), true, "Sample", picbyteArray);
+
+            Recording record10 =new Recording( userId,  null, transcript, tags,  true,  "26.392608",  "-80.099441",  "BOCA RATON", ts.toString(), true, "Sample", picbyteArray);
+
+            Recording record11 =new Recording( userId,  null, transcript, tags,  true,  "26.461664",  "-80.072003",  "DELRAY BEACH", ts.toString(), true, "Sample", picbyteArray);
+            Recording record12 =new Recording( userId,  null, transcript, tags,  true,  "26.534233",  "-80.094681",  "BOYNTON BEACH", ts.toString(), true, "Sample", picbyteArray);
+
 
             List<Recording> recordingList = new ArrayList<>();
             recordingList.add(record1);
